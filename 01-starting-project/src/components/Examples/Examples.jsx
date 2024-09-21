@@ -1,6 +1,7 @@
 import TabButton from "../TabButton";
 import {EXAMPLES} from "../../data";
 import {useState} from "react";
+import Section from "../Section";
 
 
 const Examples = () => {
@@ -11,8 +12,7 @@ const Examples = () => {
   }
 
   return (
-      <section id="examples">
-        <h2>Examples</h2>
+      <Section title={"Examples"} id="examples">
         <menu>
           {/*// passing a function like below comment does not need the () or else it will execute on mount*/
             /*<TabButton onSelect={handleSelect}>Components</TabButton>*/}
@@ -42,7 +42,6 @@ const Examples = () => {
             State
           </TabButton>
         </menu>
-
         {selectedTopic ?
             <div id={"tab-content"}>
               <h3>{EXAMPLES[selectedTopic].title}</h3>
@@ -55,8 +54,7 @@ const Examples = () => {
             </div> :
             <h2>Please select a topic!</h2>
         }
-
-      </section>
+      </Section>
   )
 }
 
